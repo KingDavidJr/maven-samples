@@ -9,6 +9,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo 'waiting'
+                sleep 1000
                 // Get some code from a GitHub repository
                 sh "java -version"
                 sh "mvn -version"
