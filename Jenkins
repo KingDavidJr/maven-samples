@@ -10,9 +10,10 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
+                sh "java -version"
+                sh "mvn -version"
+                
                 git 'https://github.com/KingDavidJr/maven-samples'
-
-                // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
